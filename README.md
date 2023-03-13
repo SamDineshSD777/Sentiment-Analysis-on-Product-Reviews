@@ -34,4 +34,19 @@ The objective of this project is to build a web application that can help busine
 **Data Set Link:**
 https://www.kaggle.com/datafiniti/consumer-reviews-of-amazon-products
 
-**.**
+## Instructions
+1. First clone the repository using the below command in bash:
+```git
+git clone https://github.com/SamDineshSD777/Sentiment-Analysis-on-Product-Reviews/tree/shubham-latest
+```
+
+2. Install the dependencies using the below command on pip:
+```pip
+!pip install -r requirements.txt
+```
+
+3. Run 'load_predict.py' to run the model and provide a sample review to get the review sentiment.
+
+## Demo
+**Click to play the demo**    
+[![Watch the video](sentiment_analysis_product_review_preview.jpg)](https://drive.google.com/file/d/1xOfDIN0nDi6G8pHYYz8Hol-mXCtMP5Ee/view?usp=sharing)
