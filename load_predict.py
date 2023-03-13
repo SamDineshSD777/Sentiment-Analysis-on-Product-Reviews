@@ -10,17 +10,19 @@ warnings.filterwarnings('ignore')
 
 
 # Loading tokenizer and lgbm model
-VECTORIZER = joblib.load('models/tfidf_vectorizer.sav')
+VECTORIZER = joblib.load('tfidf_vectorizer.sav')
 MODEL = joblib.load('model.pkl')
 
 # Sample Input
 
 # positive review
 # sample = "Fantastic and clean version of melatonin - fast acting and doesn’t give me nightmares like other brands have - been using for two years - great value here"
+
 # negative review
 sample = "Took these for the first time last night, up for 12 hours with horrible stomach pains. I wouldn’t recommend these to my worst enemies"
 
 
+# Function to preprocess text
 def preprocess_text(text):
     
     # converting the text to lower case
@@ -51,9 +53,11 @@ def preprocess_text(text):
 
     return vector
 
-# Sentiment Predict function based on model
+# Predict Function
 def predict(text=''):
+    # preprocess text
     vector = preprocess_text(text)
+    # make prediction
     prediction = MODEL.predict(vector)[0]
     if prediction == 0:
         print(f'Review: {text}\nSentiment: Bad Review!')
@@ -61,5 +65,7 @@ def predict(text=''):
         print(f'Review: {text}\nSentiment: Good Review!')
     return prediction
 
+### INSERT YOUR CUSTOM REVIEW HERE ###
+# sample = "insert here and remove the hashtag"
 
 predict(sample)
